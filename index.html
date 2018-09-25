@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>mcBibleQuiz Template</title>
+	<link rel="stylesheet" href="bootstrap/3.3.7/css/bootstrap-cerulean-grn99.min.css">
+	<link rel="stylesheet" href="font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/mymcBQ.css">
+
+
+	<script src="jquery/3.3.1/jquery.min.js"></script> 
+	<script src="bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/smoothScroll.js"></script>
+</head>
+
+<body>
+	<div id="navBar"></div>
+
+	<div id="main">
+	<center>
+
+		<div class="table-responsive" id="tableDiv1">
+			<table class="table table-bordered table-hover" id='table1'></table>
+		</div>
+
+		<div id="notifyTopic"></div>
+
+		<div id="chooseTotalQ"></div>
+
+		<!--  Q&A items generated here -->
+
+		<!-- restart button generated here -->
+
+	</center>
+	</div>
+
+	<script src='js/setDat-mc.js'></script>
+	<script src='js/topicMenuButtons.js'></script>
+	<script src='js/paramsQ-bs.js'></script>
+	<script src='js/layoutQA.js'></script>
+	<script src='js/coinBump.js'></script>	
+	<script src='js/genQA-bs.js'></script>
+	<script>
+	/*
+	creation = [
+		["The Book of Genesis opens with the Hebrew word 'bereshit', what is this word's translation into English?",
+		{
+			1:'In the beginning',
+			2:'Let there be Light',
+			3:'When yet there was nothing',
+			4:'The Lord God said'
+		},
+		, '(Gn 1:1)'
+		],
+		[ "After putting the man to a deep sleep what did the Lord God take from him to build into a woman?",
+		{
+			4:'A tooth',
+			3:'A fingernail',
+			2:'A strand of hair',
+			1:'A rib'
+		},
+		, '(Gn 1:2)'
+		],
+		[ "What did the Lord God first bless with the words ‘Be fertile and multiply’?",
+		{
+			2:'The first man and woman',
+			1:'The sea creatues and birds',
+			3:'The plants',
+			4:'The land animals'
+		}, '(Gn 1:22)'
+		]
+	];*/
+	/*console.log(creation[2][1][2]);
+	console.log(creation[2][2]);
+	console.log(rndIndexes = [1,2,3,4].sort(function(a, b){return 0.5 - Math.random()}));
+	choicesO=creation[2][1];
+	console.log(choices=[choicesO['1'],choicesO['2'],choicesO['3'],choicesO['4']]);
+  newChoices=[];
+	for (var ind = 0; ind < 4; ind++) {
+		newChoices[ind] = choices[rndIndexes[ind]-1];
+	}
+	console.log(choices=newChoices);
+	indices=[1,2,3,4];
+	console.log(rndIndexes.indexOf(1));
+	console.log(indices[rndIndexes.indexOf(1)]);
+	*/
+	</script>
+</body>
+</html>
