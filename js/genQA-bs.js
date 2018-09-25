@@ -64,7 +64,7 @@ function genQ(ind,data) {
 	indices=[1,2,3,4];
 	answerChoice=rndIndexes.indexOf(1);
 	qn = ind + 1;
-	document.getElementById("qa").innerHTML = '<div id="question" class="choices"><a id="qlabel" href="#"><b><u>Question</u>:</b></a><br></div><br><div id="answer"><button id="alabel" type="button" class="btn btn-primary"  onclick="genA(iqn,dat);">Submit Answer</button><a></a>&thinsp;<button id="nextBtn" type="button" class="btn btn-primary" onclick="iqn += 1;genQ(iqn,dat);">Next Question</button><br></div><div id="ansInfo"></div><br>';
+	document.getElementById("qa").innerHTML = '<div id="question" class="choices"><a id="qlabel" href="#"><b><u>Question</u>:</b></a><br></div><br><div id="answer"><button id="alabel" type="button" class="btn btn-info"  onclick="genA(iqn,dat);">Submit Answer</button><a></a>&thinsp;<button id="nextBtn" type="button" class="btn btn-primary" onclick="iqn += 1;genQ(iqn,dat);">Next Question</button><br></div><div id="ansInfo"></div><br>';
 	document.getElementById("question").innerHTML +=  '<b>' + qn + '. </b>' + question + '<br><br><input type="radio" class="choiceradio" id="choice1" name="choices" onclick="echoChoice(' + "'" + 'choice1' + "'" + ');"><label id="label1" for="choice1"> 1. ' + choices[0] + '</label><br><input type="radio" class="choiceradio" id="choice2" name="choices" onclick="echoChoice(' + "'" + 'choice2' + "'" + ');"><label id ="label2" for="choice2"> 2. ' +  choices[1] + '</label><br><input type="radio" class="choiceradio" id="choice3" name="choices" onclick="echoChoice(' + "'" + 'choice3' + "'" + ');"><label id="label3" for="choice3"> 3. ' + choices[2] + '</label><br><input type="radio" class="choiceradio" id="choice4" name="choices" onclick="echoChoice(' + "'" + 'choice4' + "'" + ');"><label id ="label4" for="choiceD"> 4. ' + choices[3] + '</label><br><div id="echoChoice"></div>';
 	document.getElementById("end").innerHTML += '<div id="endInfo"></div>';
 	ansDat = [choices,answerChoice];
@@ -80,7 +80,7 @@ function genA(ind,data) {
 	var answer = dat[ind][1];
 	if(document.getElementById("echoChoice").innerHTML == '' | document.getElementById("echoChoice").innerHTML == "<font color='blue'>Please choose an answer first!</font>") {
 		document.getElementById("echoChoice").innerHTML = "<font color='blue'>Please choose an answer first!</font>";
-		document.getElementById("answer").innerHTML = '<button id="alabel" type="button" class="btn btn-primary"  onclick="genA(iqn,dat);">Submit Answer</button><a></a>&thinsp;<button id="nextBtn" type="button" class="btn btn-primary" onclick="iqn += 1;genQ(iqn,dat);">Next Question</button><br></div><div id="ansInfo">';
+		document.getElementById("answer").innerHTML = '<button id="alabel" type="button" class="btn btn-info"  onclick="genA(iqn,dat);">Submit Answer</button><a></a>&thinsp;<button id="nextBtn" type="button" class="btn btn-primary" onclick="iqn += 1;genQ(iqn,dat);">Next Question</button><br></div><div id="ansInfo">';
 		return;
 	};
 	checkAns();

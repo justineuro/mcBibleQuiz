@@ -20,7 +20,7 @@ function noteTopic(topicQ) {
 	document.getElementById(topicQ).style.weight = 'bold';
 	document.getElementById(topicQ).style.background = '#007700';
 	document.getElementById("notifyTopic").innerHTML = '<h5>The topic chosen is <b>'+ topicQ + '</b>.  Please select the total number of questions for this quiz below.</h5>';	
-	document.getElementById("chooseTotalQ").innerHTML =	'<form><table class="table  table-hover" id="table2" valign="middle"><!--colgroup><col span ="1" width="130px" ><col span ="1" width="80px" ></colgroup--><tbody><tr><td>Total questions:<select class="form-control" id="myTotalQ"><option>5</option><option>10</option><option>15</option><option>20</option></select></td><td><br><input type="button" class="btn btn-info" onclick="var datAll = getQTotal(topic);dat = datAll[1];" value="Submit"></td></tr></tbody></table></form>';
+	document.getElementById("chooseTotalQ").innerHTML =	'<form><table class="table  table-hover" id="table2" valign="middle"><!--colgroup><col span ="1" width="130px" ><col span ="1" width="80px" ></colgroup--><tbody><tr><td>Total questions:<select class="form-control" id="myTotalQ"><option>5</option><option>10</option><option>15</option><option>20</option></select></td><td><br><input id="numq" type="button" class="btn btn-info" onclick="var datAll = getQTotal(topic);dat = datAll[1];" value="Submit"></td></tr></tbody></table></form>';
 }
 
 // function for truncating data; generating Q & A page
