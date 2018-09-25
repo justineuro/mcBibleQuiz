@@ -1,6 +1,8 @@
 ## <img alt="mcBQ Logo" src="res/mcBQ_2sq.png" style="margin-bottom: -5px" height="50" width="50" valign="bottom"></img>**mcBibleQuiz**
 
-[**mcBibleQuiz**](https://justineuro.github.io/BibleQuiz) is meant as a multiple-choice question-and-answer familiarizer to [**Holy Scriptures**](https://en.wikipedia.org/wiki/Bible).  A demo can be found at [https://justineuro.github.io/mcBibleQuiz](https://justineuro.github.io/mcBibleQuiz).  
+[**mcBibleQuiz**](https://justineuro.github.io/BibleQuiz) is meant as a multiple-choice question-and-answer familiarizer to [**Holy Scriptures**](https://en.wikipedia.org/wiki/Bible).  A demo can be found at [https://justineuro.github.io/mcBibleQuiz](https://justineuro.github.io/mcBibleQuiz).
+
+For a similar app please see [**BibleQuiz**](https://justineuro.github.io/BibleQuiz).  
 
 ## Using as a Template
 One can easily modify the available datasets by editing `setDat-mc.js` data file:
