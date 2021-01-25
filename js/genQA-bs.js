@@ -49,26 +49,26 @@ function genQ(ind,data) {
 		document.getElementById("ansInfo").remove();
 		document.getElementById("endInfo").innerHTML = '<center><h4>*** End of Quiz! ***</h4><center><br><h4>Use the <a href="#"><b>Q#</b></a> button above to return to a previous number of the quiz or the button below to create a new quiz.</h4><button type="button" class="btn btn-primary" onclick="location.reload()"><b>Create new quiz</b></button>';
 	};
-	if (ind < dat.length) { // if not last item remove div endInfo; added to allow review 
-		document.getElementById("endInfo").remove();
+	if (ind < dat.length) {  
+		document.getElementById("endInfo").remove(); // if not last item remove div endInfo; added to allow review
+		var question = dat[ind][0];
+		var choicesO = dat[ind][1];
+		choices=[choicesO['1'],choicesO['2'],choicesO['3'],choicesO['4']];
+		rndIndexes = [1,2,3,4].sort(function(a, b){return 0.5 - Math.random()});
+		newChoices=[];
+		for (var jnd = 0; jnd < 4; jnd++) {
+			newChoices[jnd] = choices[rndIndexes[jnd]-1];
+		}
+		choices=newChoices;
+		indices=[1,2,3,4];
+		answerChoice=rndIndexes.indexOf(1);
+		qn = ind + 1;
+		document.getElementById("qa").innerHTML = '<div id="question" class="choices"><a id="qlabel" href="#"><b><u>Question</u>:</b></a><br></div><br><div id="answer"><button id="alabel" type="button" class="btn btn-info"  onclick="genA(iqn,dat);">Submit Answer</button><a></a>&thinsp;<button id="nextBtn" type="button" class="btn btn-primary" onclick="iqn += 1;genQ(iqn,dat);">Next Question</button><br></div><div id="ansInfo"></div><br>';
+		document.getElementById("question").innerHTML +=  '<b>' + qn + '. </b>' + question + '<br><br><input type="radio" class="choiceradio" id="choice1" name="choices" onclick="echoChoice(' + "'" + 'choice1' + "'" + ');"><label id="label1" for="choice1"> 1. ' + choices[0] + '</label><br><input type="radio" class="choiceradio" id="choice2" name="choices" onclick="echoChoice(' + "'" + 'choice2' + "'" + ');"><label id ="label2" for="choice2"> 2. ' +  choices[1] + '</label><br><input type="radio" class="choiceradio" id="choice3" name="choices" onclick="echoChoice(' + "'" + 'choice3' + "'" + ');"><label id="label3" for="choice3"> 3. ' + choices[2] + '</label><br><input type="radio" class="choiceradio" id="choice4" name="choices" onclick="echoChoice(' + "'" + 'choice4' + "'" + ');"><label id ="label4" for="choiceD"> 4. ' + choices[3] + '</label><br><div id="echoChoice"></div>';
+		document.getElementById("end").innerHTML += '<div id="endInfo"></div>';
+		ansDat = [choices,answerChoice];
+		return ansDat;
 	}
-	var question = dat[ind][0];
-	var choicesO = dat[ind][1];
-	choices=[choicesO['1'],choicesO['2'],choicesO['3'],choicesO['4']];
-	rndIndexes = [1,2,3,4].sort(function(a, b){return 0.5 - Math.random()});
-	newChoices=[];
-	for (var jnd = 0; jnd < 4; jnd++) {
-		newChoices[jnd] = choices[rndIndexes[jnd]-1];
-	}
-	choices=newChoices;
-	indices=[1,2,3,4];
-	answerChoice=rndIndexes.indexOf(1);
-	qn = ind + 1;
-	document.getElementById("qa").innerHTML = '<div id="question" class="choices"><a id="qlabel" href="#"><b><u>Question</u>:</b></a><br></div><br><div id="answer"><button id="alabel" type="button" class="btn btn-info"  onclick="genA(iqn,dat);">Submit Answer</button><a></a>&thinsp;<button id="nextBtn" type="button" class="btn btn-primary" onclick="iqn += 1;genQ(iqn,dat);">Next Question</button><br></div><div id="ansInfo"></div><br>';
-	document.getElementById("question").innerHTML +=  '<b>' + qn + '. </b>' + question + '<br><br><input type="radio" class="choiceradio" id="choice1" name="choices" onclick="echoChoice(' + "'" + 'choice1' + "'" + ');"><label id="label1" for="choice1"> 1. ' + choices[0] + '</label><br><input type="radio" class="choiceradio" id="choice2" name="choices" onclick="echoChoice(' + "'" + 'choice2' + "'" + ');"><label id ="label2" for="choice2"> 2. ' +  choices[1] + '</label><br><input type="radio" class="choiceradio" id="choice3" name="choices" onclick="echoChoice(' + "'" + 'choice3' + "'" + ');"><label id="label3" for="choice3"> 3. ' + choices[2] + '</label><br><input type="radio" class="choiceradio" id="choice4" name="choices" onclick="echoChoice(' + "'" + 'choice4' + "'" + ');"><label id ="label4" for="choiceD"> 4. ' + choices[3] + '</label><br><div id="echoChoice"></div>';
-	document.getElementById("end").innerHTML += '<div id="endInfo"></div>';
-	ansDat = [choices,answerChoice];
-	return ansDat;
 }
 
 /* function for generating Answer link and preventive measure for additional clicks that 
